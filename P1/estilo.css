@@ -1,0 +1,62 @@
+/* --- ESTILOS GENERALES Y MENÚ (Mantén lo que ya tenías) --- */
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; text-align: center; }
+header { background-color: #1a1a1a; color: white; padding: 20px 0; }
+nav { margin-top: 15px; }
+.boton { display: inline-block; text-decoration: none; background-color: #d20a0a; color: white; padding: 10px 20px; margin: 5px; border-radius: 5px; transition: background 0.3s; }
+.boton:hover { background-color: #8b0000; }
+.boton-activo { background-color: #8b0000 !important; border: 2px solid gold; cursor: default; pointer-events: none; }
+.contenedor { width: 95%; max-width: 1100px; margin: 20px auto; } /* Ligeramente más ancho */
+
+/* --- NUEVA SECCIÓN DE GALERÍA (Sin Flexbox) --- */
+
+/* Contenedor principal de la galería */
+.galeria {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 0; /* Solución crítica para 'inline-block' que elimina el espacio fantasma entre fotos */
+}
+
+/* El contenedor que envuelve imagen + texto (figure) */
+.tarjeta-foto {
+    display: inline-block; /* Permite que se pongan una al lado de la otra */
+    vertical-align: top;   /* Alinea las tarjetas por la parte superior */
+    width: 46%;            /* Ancho para PCs (deja un poco de margen) */
+    margin: 2%;            /* Margen del 2% a cada lado */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;       /* Restauramos el tamaño de fuente para el texto */
+}
+
+/* La imagen dentro de la tarjeta */
+.foto {
+    width: 100%;           /* Ocupa todo el ancho de .tarjeta-foto */
+    height: auto;          /* Mantiene la proporción */
+    border-radius: 3px;
+}
+
+/* El texto de la imagen (figcaption) */
+figcaption {
+    padding-top: 10px;
+    font-style: italic;
+    color: #555;
+    font-weight: bold;
+}
+
+/* --- RESPONSIVIDAD (Media Queries) --- */
+
+/* Cuando la pantalla es menor a 768px (Tablets y Móviles) */
+@media screen and (max-width: 768px) {
+    .tarjeta-foto {
+        width: 96%;        /* Las tarjetas ocupan casi todo el ancho */
+        margin: 10px auto; /* Centradas y separadas verticalmente */
+        display: block;     /* Cambiamos a block para que se apilen obligatoriamente */
+    }
+
+    .boton {
+        display: block;    /* Los botones del menú también se apilan */
+        margin: 10px 20px;
+    }
+}
