@@ -1,4 +1,4 @@
-/* --- ESTILOS GENERALES Y MENÚ (Mantén lo que ya tenías) --- */
+/* --- ESTILOS GENERALES Y MENÚ --- */
 * { box-sizing: border-box; }
 body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; text-align: center; }
 header { background-color: #1a1a1a; color: white; padding: 20px 0; }
@@ -8,7 +8,7 @@ nav { margin-top: 15px; }
 .boton-activo { background-color: #8b0000 !important; border: 2px solid gold; cursor: default; pointer-events: none; }
 .contenedor { width: 95%; max-width: 1100px; margin: 20px auto; } /* Ligeramente más ancho */
 
-/* --- NUEVA SECCIÓN DE GALERÍA (Sin Flexbox) --- */
+/* --- NUEVA SECCIÓN DE GALERÍA --- */
 
 /* Contenedor principal de la galería */
 .galeria {
@@ -44,8 +44,23 @@ figcaption {
     color: #555;
     font-weight: bold;
 }
+.enlace-externo {
+    display: block;          /* Ocupa su propia línea */
+    background-color: #333;  /* Color oscuro para contrastar con el rojo principal */
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-top: 20px;        /* Separación del texto de arriba */
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    transition: background-color 0.2s;
+}
+.enlace-externo:hover {
+    background-color: #555;  /* Color más claro al pasar el mouse */
+}
+    /* --- RESPONSIVIDAD  --- */
 
-/* --- RESPONSIVIDAD (Media Queries) --- */
 
 /* Cuando la pantalla es menor a 768px (Tablets y Móviles) */
 @media screen and (max-width: 768px) {
