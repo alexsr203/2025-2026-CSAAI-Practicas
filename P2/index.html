@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡BOOM! - El Juego</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="game-container">
+        <h1>B O O M</h1>
+        
+        <div class="display-section">
+            <div id="clave-display" class="clave-container">
+                <div class="digito" id="d0">*</div>
+                <div class="digito" id="d1">*</div>
+                <div class="digito" id="d2">*</div>
+                <div class="digito" id="d3">*</div>
+            </div>
+            
+            <div id="cronometro">0:00:00</div>
+            <p>Intentos restantes: <span id="intentos">7</span></p>
+            <div id="mensaje-consola">Pulsa Start o un número para comenzar.</div>
+        </div>
+
+        <div class="teclado">
+            <div class="grid-numeros">
+                <button class="btn-num" onclick="presionarCifra(7)">7</button>
+                <button class="btn-num" onclick="presionarCifra(8)">8</button>
+                <button class="btn-num" onclick="presionarCifra(9)">9</button>
+                <button class="btn-num" onclick="presionarCifra(4)">4</button>
+                <button class="btn-num" onclick="presionarCifra(5)">5</button>
+                <button class="btn-num" onclick="presionarCifra(6)">6</button>
+                <button class="btn-num" onclick="presionarCifra(1)">1</button>
+                <button class="btn-num" onclick="presionarCifra(2)">2</button>
+                <button class="btn-num" onclick="presionarCifra(3)">3</button>
+                <div></div>
+                <button class="btn-num" onclick="presionarCifra(0)">0</button>
+                <div></div>
+            </div>
+
+            <div class="controles">
+                <button id="btn-start" class="btn-action start">Start</button>
+                <button id="btn-stop" class="btn-action stop">Stop</button>
+                <button id="btn-reset" class="btn-action reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
