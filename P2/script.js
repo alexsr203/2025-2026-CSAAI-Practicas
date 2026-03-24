@@ -47,9 +47,6 @@ function stop() {
 
 // --- LÓGICA DEL JUEGO ---
 
-/**
- * Genera 4 dígitos aleatorios sin repetir
- */
 function generarClaveUnica() {
     let opciones = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     let resultado = [];
@@ -152,7 +149,6 @@ function bloquearBotones() {
 
 // --- ASIGNACIÓN DE EVENTOS ---
 
-// Modificamos el HTML o asignamos por JS para pasar el elemento 'this'
 botonesNumericos.forEach(btn => {
     btn.onclick = function() {
         presionarCifra(parseInt(this.innerText), this);
