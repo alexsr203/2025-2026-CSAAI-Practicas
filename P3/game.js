@@ -19,7 +19,7 @@ let juegoTerminado = false;
 // Estado de teclas
 const teclas = {};
 document.addEventListener('keydown', (e) => {teclas[e.code] = true
-iniciarMusica});
+iniciarMusica()});
 document.addEventListener('keyup', (e) => teclas[e.code] = false);
 
 // --- CLASES ---
