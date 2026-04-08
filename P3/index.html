@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invasión Alienígena - Defensa de Canva Centauri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ui-container">
+        <h1>INVASIÓN ALIENÍGENA</h1>
+        <div class="stats">
+            <div>Puntuación: <span id="puntuacion">0</span></div>
+            <div>Vidas: <span id="vidas">3</span></div>
+            <div class="energy-container">
+                Energía: <div class="energy-bar"><div id="energy-fill"></div></div>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="mensaje-final" class="hidden"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
