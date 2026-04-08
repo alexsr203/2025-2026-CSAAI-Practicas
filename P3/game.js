@@ -18,11 +18,11 @@ let juegoTerminado = false;
 
 // Estado de teclas
 const teclas = {};
-document.addEventListener('keydown', (e) => teclas[e.code] = true);
+document.addEventListener('keydown', (e) => {teclas[e.code] = true
+iniciarMusica});
 document.addEventListener('keyup', (e) => teclas[e.code] = false);
 
 // --- CLASES ---
-
 class Jugador {
     constructor() {
         this.ancho = 50;
@@ -112,6 +112,13 @@ const explosiones = [];
 let aliens = [];
 let direccionAliens = 1;
 let velocidadAliens = 0.5;
+
+function iniciarMusica() {
+    sonidoMusicaFondo.play().catch(error => {
+        console.log("Esperando interacción del usuario para sonar...");
+    });
+}
+
 
 function inicializarAliens() {
     for (let fila = 0; fila < 3; fila++) {
