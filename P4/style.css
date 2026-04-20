@@ -1,0 +1,207 @@
+:root {
+    --bg-primary: #a3d98c;
+    --bg-panel: #d5eed1;
+    --text-dark: #1a1a1a;
+    --white: #ffffff;
+    --card-bg-0: #f0f4f8; /* Color para la primera palabra */
+    --card-bg-1: #6d4c41; /* Color para la segunda palabra */
+    --highlight: #ff0000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* --- PANEL LATERAL --- */
+.sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel {
+    background-color: var(--bg-panel);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.panel h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.panel p, .panel label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #e0f2dc;
+    color: #1a1a1a;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+.game-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn-music {
+    width: auto;
+    padding: 8px 16px;
+    background-color: var(--bg-panel);
+    border-radius: 20px;
+}
+
+.status-board {
+    display: flex;
+    gap: 10px;
+}
+
+.status-box {
+    background-color: var(--bg-panel);
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 90px;
+}
+
+.status-box .label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-box .value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.central-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.large-word {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    letter-spacing: 2px;
+}
+
+/* --- CUADRÍCULA (GRID) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    perspective: 1000px;
+}
+
+.card {
+    height: 140px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 0 0;
+    overflow: hidden;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card .icon {
+    font-size: 3rem;
+}
+
+.card .word {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card.type-0 { background: linear-gradient(to bottom, #ffffff, #dbe4ee); }
+.card.type-1 { background: linear-gradient(to bottom, #8d6e63, #4e342e); color: white;}
+
+/* Estado activo de la tarjeta (El latido/resaltado) */
+.card.active {
+    border: 4px solid var(--highlight);
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* Responsive básico */
+@media (max-width: 800px) {
+    .app-container { flex-direction: column; }
+    .sidebar { width: 100%; }
+    .grid-container { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); }
+}

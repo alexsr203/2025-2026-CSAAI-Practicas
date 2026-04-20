@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat The Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="panel instructions">
+                <h2>Cómo funciona</h2>
+                <p>El juego recorre siempre las 8 imágenes de izquierda a derecha y de arriba abajo. En cada paso solo se ilumina una. Tienes que decir la palabra correcta antes del siguiente salto.</p>
+            </div>
+
+            <div class="panel config">
+                <h2>Configuración</h2>
+                
+                <label for="sequence-select">Secuencia</label>
+                <select id="sequence-select">
+                    <option value="casa_cama">Casa / Cama</option>
+                    <option value="pato_gato">Pato / Gato</option>
+                    <option value="queso_beso">Queso / Beso</option>
+                    <option value="luna_cuna">Luna / Cuna</option>
+                </select>
+
+                <label for="level-select">Nivel inicial</label>
+                <select id="level-select">
+                    <option value="1">Nivel 1</option>
+                    <option value="2">Nivel 2</option>
+                    <option value="3">Nivel 3</option>
+                    <option value="4">Nivel 4</option>
+                    <option value="5">Nivel 5</option>
+                </select>
+            </div>
+
+            <div class="panel controls">
+                <button id="btn-start" class="btn-primary">Empezar partida</button>
+                <button id="btn-stop" class="btn-secondary" disabled>Detener</button>
+            </div>
+        </aside>
+
+        <main class="game-area">
+            <header class="game-header">
+                <button id="btn-music" class="btn-music">🎵 Música: OFF</button>
+                
+                <div class="status-board">
+                    <div class="status-box">
+                        <span class="label">Nivel</span>
+                        <span id="display-level" class="value">1/5</span>
+                    </div>
+                    <div class="status-box">
+                        <span class="label">Tiempo</span>
+                        <span id="display-time" class="value">0.0s</span>
+                    </div>
+                    <div class="status-box">
+                        <span class="label">Estado</span>
+                        <span id="display-status" class="value">En espera</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="central-display">
+                <div id="active-word-display" class="large-word">Pulsa "Empezar"</div>
+            </div>
+
+            <div id="grid-container" class="grid-container">
+                </div>
+        </main>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
