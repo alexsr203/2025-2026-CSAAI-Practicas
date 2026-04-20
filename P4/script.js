@@ -1,5 +1,5 @@
 // --- DATOS Y CONFIGURACIÓN ---
-// Uso de emojis como 'placeholders' para imágenes reales.
+// Uso de emojis para representar las palabras
 const DICTIONARY = {
     'casa_cama':  [{ word: 'CASA', icon: '🏠' }, { word: 'CAMA', icon: '🛏️' }],
     'pato_gato':  [{ word: 'PATO', icon: '🦆' }, { word: 'GATO', icon: '🐈' }],
@@ -7,7 +7,6 @@ const DICTIONARY = {
     'luna_cuna':  [{ word: 'LUNA', icon: '🌙' }, { word: 'CUNA', icon: '🍼' }]
 };
 
-// 0 representa la palabra 1, 1 representa la palabra 2
 const LEVELS = {
     1: { speed: 1200, pattern: [0,0,0,0,1,1,1,1] }, // Agrupados, lento
     2: { speed: 900,  pattern: [0,0,1,1,0,0,1,1] }, // Pares, velocidad media
