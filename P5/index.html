@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot League</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Lienzo donde se renderiza el juego -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+        <!-- Capa de Interfaz de Usuario (Menús, Marcadores) -->
+        <div id="ui-layer">
+            
+            <!-- Menú Principal -->
+            <div id="menu-screen" class="screen">
+                <h1>BOT LEAGUE</h1>
+                <p>Elige tu modo de juego:</p>
+                <button id="btn-3goals">Partido a 3 Goles</button>
+                <button id="btn-golden">Gol de Oro</button>
+            </div>
+
+            <!-- Marcador HUD -->
+            <div id="hud" class="hidden">
+                <span id="score-player">0</span> - <span id="score-enemy">0</span>
+            </div>
+
+            <!-- Mensajes Centrales (Cuenta atrás, Goles) -->
+            <div id="message-screen" class="screen hidden">
+                <h2 id="main-message">3</h2>
+            </div>
+
+            <!-- Pantalla Final -->
+            <div id="game-over-screen" class="screen hidden">
+                <h1 id="end-title">¡Ganaste!</h1>
+                <button id="btn-restart">Volver al Menú</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
