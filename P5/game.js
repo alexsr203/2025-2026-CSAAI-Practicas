@@ -260,30 +260,39 @@ function updatePhysics() {
 
 // ================= RENDERIZADO ================= //
 
+// ================== CÓDIGO CORREGIDO ==================
+
 function drawField() {
-    ctx.fillStyle = '#4CAF50';
+    ctx.fillStyle = '#2e7d32'; // Un verde más similar al de tu imagen
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.strokeStyle = '#fff';
+    ctx.strokeStyle = '#cccccc'; // Líneas en gris claro/blanco
     ctx.lineWidth = 3;
 
-    // Líneas del campo
+    // 1. Bordes del campo
     ctx.beginPath();
-    // Borde exterior
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
-    // Medio campo
+    ctx.stroke(); // Cerramos el trazo del borde
+
+    // 2. Línea central (Restaurada)
+    ctx.beginPath(); // Aislamos el trazo
     ctx.moveTo(canvas.width / 2, 0);
     ctx.lineTo(canvas.width / 2, canvas.height);
-    // Círculo central
-    ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, Math.PI * 2);
-    ctx.stroke();
+    ctx.stroke(); // Dibujamos solo esta línea
 
-    // Portería Izquierda (Jugador)
+    // 3. Círculo central
+    ctx.beginPath(); // Volvemos a aislar
+    ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, Math.PI * 2);
+    ctx.stroke(); // Dibujamos solo el círculo
+
+    // 4. Porterías
     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    
+    // Portería Izquierda
     ctx.fillRect(0, canvas.height / 2 - goalWidth / 2, goalDepth, goalWidth);
     ctx.strokeRect(0, canvas.height / 2 - goalWidth / 2, goalDepth, goalWidth);
 
-    // Portería Derecha (Bot)
+    // Portería Derecha
     ctx.fillRect(canvas.width - goalDepth, canvas.height / 2 - goalWidth / 2, goalDepth, goalWidth);
     ctx.strokeRect(canvas.width - goalDepth, canvas.height / 2 - goalWidth / 2, goalDepth, goalWidth);
 }
