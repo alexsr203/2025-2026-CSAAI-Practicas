@@ -260,10 +260,9 @@ function updatePhysics() {
 
 // ================= RENDERIZADO ================= //
 
-// ================== CÓDIGO CORREGIDO ==================
 
 function drawField() {
-    ctx.fillStyle = '#2e7d32'; // Un verde más similar al de tu imagen
+    ctx.fillStyle = '#2e7d32'; 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.strokeStyle = '#cccccc'; // Líneas en gris claro/blanco
@@ -274,11 +273,11 @@ function drawField() {
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
     ctx.stroke(); // Cerramos el trazo del borde
 
-    // 2. Línea central (Restaurada)
+    // 2. Línea central 
     ctx.beginPath(); // Aislamos el trazo
     ctx.moveTo(canvas.width / 2, 0);
     ctx.lineTo(canvas.width / 2, canvas.height);
-    ctx.stroke(); // Dibujamos solo esta línea
+    ctx.stroke(); 
 
     // 3. Círculo central
     ctx.beginPath(); // Volvemos a aislar
@@ -326,16 +325,6 @@ function render() {
         ctx.strokeStyle = '#000';
         ctx.stroke();
         
-        // Indicador de orientación del jugador (hacia dónde se movió por última vez)
-        if (player.vx !== 0 || player.vy !== 0) {
-            ctx.beginPath();
-            ctx.moveTo(player.x, player.y);
-            const angle = Math.atan2(player.vy, player.vx);
-            ctx.lineTo(player.x + Math.cos(angle) * (player.radius + 10), player.y + Math.sin(angle) * (player.radius + 10));
-            ctx.strokeStyle = '#f1c40f';
-            ctx.lineWidth = 3;
-            ctx.stroke();
-        }
     }
 }
 
